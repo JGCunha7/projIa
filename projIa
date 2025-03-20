@@ -1,0 +1,216 @@
+import java.util.Date;
+public class Ia {
+
+
+    class Relatorio {
+        private String solucoes;
+
+        public String getSolucoes() {
+            return solucoes;
+        }
+
+        public void setSolucoes(String solucoes) {
+            this.solucoes = solucoes;
+        }
+
+        public void gerarRelatorio() {
+            System.out.println("Relatório gerado com soluções: " + solucoes);
+        }
+
+        public void visualizarRelatorio() {
+            System.out.println("Visualizando relatório: " + solucoes);
+        }
+
+        @Override
+        public String toString() {
+            return "Relatorio{solucoes='" + solucoes + "'}";
+        }
+    }
+
+    class Protocolo {
+        private int id;
+        private String tipo;
+        private Date data;
+        private String status;
+        private Teste teste;
+        private Relatorio relatorio;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTipo() {
+            return tipo;
+        }
+
+        public void setTipo(String tipo) {
+            this.tipo = tipo;
+        }
+
+        public Date getData() {
+            return data;
+        }
+
+        public void setData(Date data) {
+            this.data = data;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public Teste getTeste() {
+            return teste;
+        }
+
+        public void setTeste(Teste teste) {
+            this.teste = teste;
+        }
+
+        public Relatorio getRelatorio() {
+            return relatorio;
+        }
+
+        public void setRelatorio(Relatorio relatorio) {
+            this.relatorio = relatorio;
+        }
+
+        @Override
+        public String toString() {
+            return "Protocolo{id=" + id + ", tipo='" + tipo + "', data=" + data + ", status='" + status + "'}";
+        }
+    }
+
+    class Teste {
+        private int id;
+        private String tipoTeste;
+        private Programador programador;
+        private Software software;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTipoTeste() {
+            return tipoTeste;
+        }
+
+        public void setTipoTeste(String tipoTeste) {
+            this.tipoTeste = tipoTeste;
+        }
+
+        public Programador getProgramador() {
+            return programador;
+        }
+
+        public void setProgramador(Programador programador) {
+            this.programador = programador;
+        }
+
+        public Software getSoftware() {
+            return software;
+        }
+
+        public void setSoftware(Software software) {
+            this.software = software;
+        }
+
+        public void iniciarTeste() {
+            System.out.println("Teste iniciado para o software: " + software.getDescricao());
+        }
+
+        public void finalizarTeste() {
+            System.out.println("Teste finalizado para o software: " + software.getDescricao());
+        }
+
+        @Override
+        public String toString() {
+            return "Teste{id=" + id + ", tipoTeste='" + tipoTeste + "'}";
+        }
+    }
+
+    class Software {
+        private String descricao;
+        private int id;
+
+        public String getDescricao() {
+            return descricao;
+        }
+
+        public void setDescricao(String descricao) {
+            this.descricao = descricao;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public void verificarVersao() {
+            System.out.println("Verificando versão do software: " + descricao);
+        }
+
+        @Override
+        public String toString() {
+            return "Software{id=" + id + ", descricao='" + descricao + "'}";
+        }
+    }
+
+    class Programador {
+        private int salario;
+        private String nivel;
+        private String linguagens;
+
+        public int getSalario() {
+            return salario;
+        }
+
+        public void setSalario(int salario) {
+            this.salario = salario;
+        }
+
+        public String getNivel() {
+            return nivel;
+        }
+
+        public void setNivel(String nivel) {
+            this.nivel = nivel;
+        }
+
+        public String getLinguagens() {
+            return linguagens;
+        }
+
+        public void setLinguagens(String linguagens) {
+            this.linguagens = linguagens;
+        }
+
+        public void corrigirErros() {
+            System.out.println("Corrigindo erros de código...");
+        }
+
+        public void testarCodigo() {
+            System.out.println("Testando código...");
+        }
+
+        @Override
+        public String toString() {
+            return "Programador{nivel='" + nivel + "', salario=" + salario + "}";
+        }
+    }
+}
