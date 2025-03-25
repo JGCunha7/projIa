@@ -1,0 +1,72 @@
+/* projIAL: */
+
+CREATE TABLE Software (
+    Id INT PRIMARY KEY,
+    descricao TEXT,
+    fk_protocolo_Id INT,
+    fk_usuario_Id INT
+);
+
+CREATE TABLE protocolo (
+    Id INT PRIMARY KEY,
+    tipo VARCHAR (20),
+    status VARCHAR (15),
+    data DATE,
+    relatorio TEXT,
+    teste TEXT,
+    fk_relatorio_Id INT,
+    fk_teste_Id INT
+);
+
+CREATE TABLE teste (
+    Id INT PRIMARY KEY,
+    tipoTeste VARCHAR (25),
+    progamador VARCHAR (20),
+    relatorio TEXT,
+    fk_usuario_Id INT
+);
+
+CREATE TABLE usuario (
+    Id INT PRIMARY KEY,
+    nome VARCHAR (40),
+    cpf INT,
+    dataNasc DATE,
+    salario DOUBLE,
+    linguagens VARCHAR (50),
+    nivel VARCHAR(20),
+    cnpj VARCHAR (30),
+    razaoSocial VARCHAR (20),
+    registro TEXT,
+    usuario_TIPO INT,
+    perfil VARCHAR (20)
+);
+
+CREATE TABLE relatorio (
+    Id INT PRIMARY KEY,
+    solucoes TEXT
+);
+ 
+ALTER TABLE Software ADD CONSTRAINT FK_Software_2
+    FOREIGN KEY (fk_protocolo_Id)
+    REFERENCES protocolo (Id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Software ADD CONSTRAINT FK_Software_3
+    FOREIGN KEY (fk_usuario_Id)
+    REFERENCES usuario (Id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE protocolo ADD CONSTRAINT FK_protocolo_2
+    FOREIGN KEY (fk_relatorio_Id)
+    REFERENCES relatorio (Id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE protocolo ADD CONSTRAINT FK_protocolo_3
+    FOREIGN KEY (fk_teste_Id)
+    REFERENCES teste (Id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE teste ADD CONSTRAINT FK_teste_2
+    FOREIGN KEY (fk_usuario_Id)
+    REFERENCES usuario (Id)
+    ON DELETE CASCADE;
