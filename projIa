@@ -4,6 +4,15 @@ public class Ia {
 
     class Relatorio {
         private String solucoes;
+        private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
 
         public String getSolucoes() {
             return solucoes;
@@ -23,7 +32,10 @@ public class Ia {
 
         @Override
         public String toString() {
-            return "Relatorio{solucoes='" + solucoes + "'}";
+            return "Relatorio{" +
+                    "solucoes='" + solucoes + '\'' +
+                    ", id=" + id +
+                    '}';
         }
     }
 
@@ -175,6 +187,15 @@ public class Ia {
         private int salario;
         private String nivel;
         private String linguagens;
+        private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
 
         public int getSalario() {
             return salario;
@@ -210,7 +231,12 @@ public class Ia {
 
         @Override
         public String toString() {
-            return "Programador{nivel='" + nivel + "', salario=" + salario + "}";
+            return "Programador{" +
+                    "salario=" + salario +
+                    ", nivel='" + nivel + '\'' +
+                    ", linguagens='" + linguagens + '\'' +
+                    ", id=" + id +
+                    '}';
         }
     }
 }
