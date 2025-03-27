@@ -1,7 +1,94 @@
+
 import java.util.Date;
 public class Ia {
 
+    class Usuario{
+        private String nome;
+        private int cpf;
+        private int id;
+        private Date dataNasc;
 
+        @Override
+        public String toString() {
+            return "Usuario{" +
+                    "nome='" + nome + '\'' +
+                    ", cpf=" + cpf +
+                    ", id=" + id +
+                    ", dataNasc=" + dataNasc +
+                    '}';
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public int getCpf() {
+            return cpf;
+        }
+
+        public void setCpf(int cpf) {
+            this.cpf = cpf;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public Date getDataNasc() {
+            return dataNasc;
+        }
+
+        public void setDataNasc(Date dataNasc) {
+            this.dataNasc = dataNasc;
+        }
+    }
+
+    class Cliente extends Usuario{
+        private String registro;
+        private String razaoSocial;
+        private String cnpj;
+
+        @Override
+        public String toString() {
+            return "Cliente{" +
+                    "registro='" + registro + '\'' +
+                    ", razaoSocial='" + razaoSocial + '\'' +
+                    ", cnpj='" + cnpj + '\'' +
+                    '}';
+        }
+
+        public String getRegistro() {
+            return registro;
+        }
+
+        public void setRegistro(String registro) {
+            this.registro = registro;
+        }
+
+        public String getRazaoSocial() {
+            return razaoSocial;
+        }
+
+        public void setRazaoSocial(String razaoSocial) {
+            this.razaoSocial = razaoSocial;
+        }
+
+        public String getCnpj() {
+            return cnpj;
+        }
+
+        public void setCnpj(String cnpj) {
+            this.cnpj = cnpj;
+        }
+    }
     class Relatorio {
         private String solucoes;
         private int id;
@@ -183,7 +270,7 @@ public class Ia {
         }
     }
 
-    class Programador {
+    class Programador extends Usuario {
         private int salario;
         private String nivel;
         private String linguagens;
@@ -240,3 +327,334 @@ public class Ia {
         }
     }
 }
+
+
+    import java.util.Date;
+public class Ia {
+
+    class Usuario{
+        private String nome;
+        private int cpf;
+        private int id;
+        private Date dataNasc;
+
+        @Override
+        public String toString() {
+            return "Usuario{" +
+                    "nome='" + nome + '\'' +
+                    ", cpf=" + cpf +
+                    ", id=" + id +
+                    ", dataNasc=" + dataNasc +
+                    '}';
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public int getCpf() {
+            return cpf;
+        }
+
+        public void setCpf(int cpf) {
+            this.cpf = cpf;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public Date getDataNasc() {
+            return dataNasc;
+        }
+
+        public void setDataNasc(Date dataNasc) {
+            this.dataNasc = dataNasc;
+        }
+    }
+
+    class Cliente extends Usuario{
+        private String registro;
+        private String razaoSocial;
+        private String cnpj;
+
+        @Override
+        public String toString() {
+            return "Cliente{" +
+                    "registro='" + registro + '\'' +
+                    ", razaoSocial='" + razaoSocial + '\'' +
+                    ", cnpj='" + cnpj + '\'' +
+                    '}';
+        }
+
+        public String getRegistro() {
+            return registro;
+        }
+
+        public void setRegistro(String registro) {
+            this.registro = registro;
+        }
+
+        public String getRazaoSocial() {
+            return razaoSocial;
+        }
+
+        public void setRazaoSocial(String razaoSocial) {
+            this.razaoSocial = razaoSocial;
+        }
+
+        public String getCnpj() {
+            return cnpj;
+        }
+
+        public void setCnpj(String cnpj) {
+            this.cnpj = cnpj;
+        }
+    }
+    class Relatorio {
+        private String solucoes;
+        private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getSolucoes() {
+            return solucoes;
+        }
+
+        public void setSolucoes(String solucoes) {
+            this.solucoes = solucoes;
+        }
+
+        public void gerarRelatorio() {
+            System.out.println("Relatório gerado com soluções: " + solucoes);
+        }
+
+        public void visualizarRelatorio() {
+            System.out.println("Visualizando relatório: " + solucoes);
+        }
+
+        @Override
+        public String toString() {
+            return "Relatorio{" +
+                    "solucoes='" + solucoes + '\'' +
+                    ", id=" + id +
+                    '}';
+        }
+    }
+
+    class Protocolo {
+        private int id;
+        private String tipo;
+        private Date data;
+        private String status;
+        private Teste teste;
+        private Relatorio relatorio;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTipo() {
+            return tipo;
+        }
+
+        public void setTipo(String tipo) {
+            this.tipo = tipo;
+        }
+
+        public Date getData() {
+            return data;
+        }
+
+        public void setData(Date data) {
+            this.data = data;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public Teste getTeste() {
+            return teste;
+        }
+
+        public void setTeste(Teste teste) {
+            this.teste = teste;
+        }
+
+        public Relatorio getRelatorio() {
+            return relatorio;
+        }
+
+        public void setRelatorio(Relatorio relatorio) {
+            this.relatorio = relatorio;
+        }
+
+        @Override
+        public String toString() {
+            return "Protocolo{id=" + id + ", tipo='" + tipo + "', data=" + data + ", status='" + status + "'}";
+        }
+    }
+
+    class Teste {
+        private int id;
+        private String tipoTeste;
+        private Programador programador;
+        private Software software;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTipoTeste() {
+            return tipoTeste;
+        }
+
+        public void setTipoTeste(String tipoTeste) {
+            this.tipoTeste = tipoTeste;
+        }
+
+        public Programador getProgramador() {
+            return programador;
+        }
+
+        public void setProgramador(Programador programador) {
+            this.programador = programador;
+        }
+
+        public Software getSoftware() {
+            return software;
+        }
+
+        public void setSoftware(Software software) {
+            this.software = software;
+        }
+
+        public void iniciarTeste() {
+            System.out.println("Teste iniciado para o software: " + software.getDescricao());
+        }
+
+        public void finalizarTeste() {
+            System.out.println("Teste finalizado para o software: " + software.getDescricao());
+        }
+
+        @Override
+        public String toString() {
+            return "Teste{id=" + id + ", tipoTeste='" + tipoTeste + "'}";
+        }
+    }
+
+    class Software {
+        private String descricao;
+        private int id;
+
+        public String getDescricao() {
+            return descricao;
+        }
+
+        public void setDescricao(String descricao) {
+            this.descricao = descricao;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public void verificarVersao() {
+            System.out.println("Verificando versão do software: " + descricao);
+        }
+
+        @Override
+        public String toString() {
+            return "Software{id=" + id + ", descricao='" + descricao + "'}";
+        }
+    }
+
+    class Programador extends Usuario {
+        private int salario;
+        private String nivel;
+        private String linguagens;
+        private int id;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public int getSalario() {
+            return salario;
+        }
+
+        public void setSalario(int salario) {
+            this.salario = salario;
+        }
+
+        public String getNivel() {
+            return nivel;
+        }
+
+        public void setNivel(String nivel) {
+            this.nivel = nivel;
+        }
+
+        public String getLinguagens() {
+            return linguagens;
+        }
+
+        public void setLinguagens(String linguagens) {
+            this.linguagens = linguagens;
+        }
+
+        public void corrigirErros() {
+            System.out.println("Corrigindo erros de código...");
+        }
+
+        public void testarCodigo() {
+            System.out.println("Testando código...");
+        }
+
+        @Override
+        public String toString() {
+            return "Programador{" +
+                    "salario=" + salario +
+                    ", nivel='" + nivel + '\'' +
+                    ", linguagens='" + linguagens + '\'' +
+                    ", id=" + id +
+                    '}';
+        }
+    }
+}
+
